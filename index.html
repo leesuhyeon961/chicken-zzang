@@ -1,7 +1,121 @@
 <!DOCTYPE html>
-<html>
-  <head><meta charset="UTF-8"><title>치킨</title></head>
-  <body>
-    <h1>안녕하세요! 맛있는 치킨입니다.</h1>
-  </body>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>맛있는치킨</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Gowun Batang', serif;
+    }
+  </style>
+  <script>
+    function toggleOrderForm() {
+      const orderSection = document.getElementById('order');
+      orderSection.classList.toggle('hidden');
+      orderSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</head>
+<body class="bg-yellow-50 text-gray-800">
+
+<!-- Header -->
+<header class="bg-gradient-to-r from-yellow-400 to-yellow-500 p-8 text-center shadow-xl">
+  <h1 class="text-5xl font-extrabold text-white drop-shadow-md">맛있는치킨</h1>
+  <p class="text-white text-lg mt-3">학생도 부담 없이, 가족도 만족하는 맛! 맛있는 치킨으로 즐거운 시간을!</p>
+  <button onclick="toggleOrderForm()" class="mt-4 bg-white text-yellow-600 font-bold px-6 py-2 rounded-full shadow hover:bg-yellow-100 transition">온라인 주문</button>
+</header>
+
+<!-- Menu Section -->
+<section id="menu" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
+  <h2 class="text-4xl font-bold text-center text-yellow-700 mb-10">🍗 메뉴</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+    <div class="bg-white p-4 rounded shadow">
+      <img src="https://images.unsplash.com/photo-1606756792952-42d0bcdce1b8" alt="양념치킨" class="rounded w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold mt-4">양념치킨</h3>
+      <p class="text-gray-600 mt-2">달콤하고 매콤한 인기메뉴!</p>
+      <p class="text-yellow-600 font-bold mt-2">???</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+      <img src="https://images.unsplash.com/photo-1612197592501-0c6ba2c50c64" alt="후라이드치킨" class="rounded w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold mt-4">후라이드치킨</h3>
+      <p class="text-gray-600 mt-2">바삭한 식감의 정석 치킨</p>
+      <p class="text-yellow-600 font-bold mt-2">???</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+      <img src="https://images.unsplash.com/photo-1585238342028-0505c1f1b80a" alt="간장치킨" class="rounded w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold mt-4">간장치킨</h3>
+      <p class="text-gray-600 mt-2">달콤짭조름한 비법간장 맛</p>
+      <p class="text-yellow-600 font-bold mt-2">???</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+      <img src="https://images.unsplash.com/photo-1606755962775-0f87dfd2b6c6" alt="도전메뉴" class="rounded w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold mt-4">도전메뉴!</h3>
+      <p class="text-gray-600 mt-2">도전메뉴에 도전하세요!</p>
+      <p class="text-yellow-600 font-bold mt-2">???</p>
+    </div>
+  </div>
+</section>
+
+<!-- Order Section (Initially Hidden) -->
+<section id="order" class="py-16 px-6 bg-white hidden">
+  <h2 class="text-4xl font-bold text-center text-yellow-700 mb-10">🛒 온라인 주문</h2>
+  <form class="max-w-xl mx-auto bg-yellow-100 p-8 rounded-2xl shadow-md">
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold mb-2">이름</label>
+      <input type="text" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="홍길동" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold mb-2">연락처</label>
+      <input type="tel" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" placeholder="010-1234-5678" required>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold mb-2">메뉴 선택</label>
+      <select class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+        <option>양념치킨</option>
+        <option>후라이드치킨</option>
+        <option>간장치킨</option>
+        <option>도전메뉴</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold mb-2">수량</label>
+      <input type="number" min="1" class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" value="1">
+    </div>
+    <div class="mb-4">
+      <label class="block text-gray-700 font-semibold mb-2">요청사항</label>
+      <textarea class="w-full p-3 rounded border border-yellow-300 focus:outline-none focus:ring-2 focus:ring-yellow-500" rows="3" placeholder="예: 덜 맵게 해주세요"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 rounded shadow">주문하기</button>
+  </form>
+</section>
+
+<!-- Event Section -->
+<section id="event" class="py-16 px-6 bg-yellow-100">
+  <h2 class="text-4xl font-bold text-center text-yellow-700 mb-10">🎉 이벤트</h2>
+  <div class="bg-white p-8 rounded-2xl shadow-lg text-center max-w-xl mx-auto">
+    <h3 class="text-2xl font-semibold">쿠폰 이벤트</h3>
+    <img src="https://images.unsplash.com/photo-1607082401421-d3e902d6a231" alt="쿠폰 이벤트" class="rounded-xl w-64 mx-auto mt-4">
+    <p class="text-gray-600 mt-4">지금 쿠폰을 받아보세요! 특별한 혜택이 기다리고 있습니다.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-yellow-100 py-16 px-6">
+  <h2 class="text-4xl font-bold text-center text-yellow-700 mb-8">📞 주문 및 문의</h2>
+  <div class="text-center text-lg text-gray-700">
+    <p><strong>전화:</strong> 02-1234-5678</p>
+    <p><strong>주소:</strong> 서울시 영등포구 선유로 207</p>
+    <p><strong>영업시간:</strong> 오전 11시 ~ 오후 10시</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gradient-to-r from-yellow-400 to-yellow-500 text-white text-center p-6 mt-12 shadow-inner">
+  &copy; 2025 맛있는치킨. All rights reserved.
+</footer>
+
+</body>
 </html>
